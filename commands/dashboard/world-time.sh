@@ -17,8 +17,20 @@
 
 # Timezones can be found in /usr/share/zoneinfo
 
-nyc=$(TZ=America/New_York date +"%H:%M")
-lon=$(TZ=Europe/London date +"%H:%M")
-bne=$(TZ=Australia/Brisbane date +"%H:%M")
+while read -r timezone name; do
+  echo -n "| $(TZ="${timezone}" date +"${name} %I:%M %p") "
+done <<EOF
+America/Los_Angeles LA
+America/Chicago Chi
+America/New_York NYC
+Asia/Kolkata PUN
+Singapore SG
+EOF
 
-echo "New York City: $nyc | London: $lon | Brisbane: $bne"
+echo '|'
+
+# nyc=$(TZ=America/New_York date +"%H:%M")
+# lon=$(TZ=Europe/London date +"%H:%M")
+# bne=$(TZ=Australia/Brisbane date +"%H:%M")
+# 
+# echo "New York City: $nyc | London: $lon | Brisbane: $bne"
