@@ -1,0 +1,1 @@
+../commands/developer-utils/base64-encode-input.sh

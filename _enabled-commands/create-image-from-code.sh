@@ -1,0 +1,1 @@
+../commands/developer-utils/create-image-from-code.sh

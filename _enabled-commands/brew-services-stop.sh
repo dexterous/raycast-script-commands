@@ -1,0 +1,1 @@
+../commands/developer-utils/brew/brew-services-stop.sh

@@ -1,0 +1,1 @@
+../commands/developer-utils/whois.sh

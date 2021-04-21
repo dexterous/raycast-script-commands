@@ -1,0 +1,1 @@
+../commands/developer-utils/run-command-in-finder.sh
