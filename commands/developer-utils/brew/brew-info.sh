@@ -12,9 +12,9 @@
 # @raycast.argument1 {"type": "text", "placeholder": "Package name"}
 #
 # Documentation:
-# @raycast.description Installs specified brew package.
-# @raycast.author Alex Zotov
-# @raycast.authorURL https://github.com/lex4hex
+# @raycast.description Display formatted summary information for a formula/cask
+# @raycast.author Saager Mhatre
+# @raycast.authorURL https://github.com/dexterous
 
 for cmd in brew jq; do
   if ! command -v "${cmd}" &> /dev/null; then
