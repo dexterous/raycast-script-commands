@@ -3,7 +3,7 @@
 # Required parameters:
 # @raycast.schemaVersion 1
 # @raycast.title Display source of a package
-# @raycast.mode fullOutput
+# @raycast.mode silent
 # @raycast.packageName Brew
 #
 # Optional parameters:
@@ -23,4 +23,14 @@ for cmd in brew gvim; do
   fi
 done
 
-brew cat "${1}" | gview -M - +'set ft=ruby'
+if brew info "${1}" >/dev/null 2>&1; then
+  brew cat "${1}" | gview -M - +'set ft=ruby' >/dev/null 2>&1
+
+  brew info --json "${1}" | jq -r '.[0] | [
+    "Source for ", .tap, "/", .name, " ", .full_name
+  ] | join("")'
+  
+else
+  echo "No such Formula/Cask ${1}!"
+
+fi
