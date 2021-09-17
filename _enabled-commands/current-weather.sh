@@ -1,0 +1,1 @@
+../commands/dashboard/current-weather.sh
